@@ -14,7 +14,7 @@ namespace Tupiniquim.ConsoleApp
         //entrada de dados
             do
             {
-                Console.WriteLine("Tupiniquim I");
+                Console.WriteLine("\r\nTupiniquim I");
                 Console.Write("\r\nTamanho da área do quadrilátero, por exemplo 5 5: ");
                 str_quadrilatero = Console.ReadLine();
                 string[] quadrilatero = str_quadrilatero.Split(' ');
@@ -95,12 +95,13 @@ namespace Tupiniquim.ConsoleApp
                     }
                 }
             //saida
-                Console.WriteLine(posicao_x_robo + " " + posicao_y_robo + " " + bussola);
+                Console.WriteLine("\r\nCoordenadas Finais do Tupiniquim I: "+posicao_x_robo + " " + posicao_y_robo + " " + bussola);
 
                 Console.Write("\r\n[S] Adicionar mais um robô para o mapeamento [N] Sair: ");
                 char proximo_robo = Convert.ToChar(Console.ReadLine());
                 continuar = proximo_robo == 'S';
             } while (continuar == true);
+            Console.ReadKey();
         }
     }
 }
