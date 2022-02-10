@@ -7,7 +7,7 @@ namespace Tupiniquim.ConsoleApp
         static void Main(string[] args)
         {
             //declarção de variáveis
-            string str_quadrilatero, str_posicao_inicial;
+            string str_quadrilatero, str_posicao_inicial, str_movimentos;
             int menor_x = 0, menor_y = 0, maior_x, maior_y, posicao_x_robo, posicao_y_robo; ;
             char bussola;
 
@@ -26,7 +26,16 @@ namespace Tupiniquim.ConsoleApp
             posicao_x_robo = int.Parse(posicao_inicial[0]);
             posicao_y_robo = int.Parse(posicao_inicial[1]);
             bussola = Convert.ToChar(posicao_inicial[2]);
+
+            Console.WriteLine("\r\nInforme os comandos a serem seguidos pelo Tupiniquim I, por exemplo MEDM");
+            Console.WriteLine("M = Mover, E = Esquerda, D = Direita");
+            Console.WriteLine("Movimentações: ");
+            str_movimentos = Console.ReadLine();
+
             //processamento
+            
+            
+
 
 
 
