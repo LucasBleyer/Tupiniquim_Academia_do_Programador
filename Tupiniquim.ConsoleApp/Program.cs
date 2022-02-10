@@ -4,103 +4,33 @@ namespace Tupiniquim.ConsoleApp
 {
     internal class Program
     {
-        static void Main(
-string[] args)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Tupiniquim I");
-            Console.Write("Digite a coordenada x do canto superior da área: ");
-            double x = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Digite a coordenada y do canto superior da área: ");
-            double y = Convert.ToDouble(Console.ReadLine());
+            //declarção de variáveis
+            string str_quadrilatero, str_posicao_inicial;
+            int menor_x = 0, menor_y = 0, maior_x, maior_y, posicao_x_robo, posicao_y_robo; ;
+            char bussola;
 
-            double posicao_inicial_x = 0;
-            Console.Write("Posição Inicial X: ");
-            posicao_inicial_x = Convert.ToDouble(Console.ReadLine());
-            double posicao_inicial_y = 0;
-            Console.Write("Posição Inicial Y: ");
-            posicao_inicial_y = Convert.ToDouble(Console.ReadLine());
+            //entrada de dados
+            Console.Write("Tamanho da área do quadrilátero, por exemplo 5 5: ");
+            str_quadrilatero = Console.ReadLine();
+            string[] quadrilatero = str_quadrilatero.Split(' ');
+            maior_x = int.Parse(quadrilatero[0]);
+            maior_y = int.Parse(quadrilatero[1]);
 
-            Console.Write("Direção a ser seguida pelo Tupiniquim I (N = Norte, S= Sul, L = Leste, O = Oeste): ");
-            char bussola = Convert.ToChar(Console.ReadLine());
-            Console.Write("Movimentos a serem seguidos pelo Tupiniquim I(M = Mover, E = Esquerda, D = Direita): ");
-            string movimentos = Convert.ToString(Console.ReadLine());
-            char[] ordens = movimentos.ToCharArray();
-            for (int i = 0; i < ordens.Length; i++)
-            {
-                while (ordens[i] == 'E')
-                {
-                    switch (bussola)
-                    {
-                        case 'N':
-                            bussola = 'O';
-                            break;
-                        case 'S':
-                            bussola = 'L';
-                            break;
-                        case 'L':
-                            bussola = 'N';
-                            break;
-                        case 'O':
-                            bussola = 'S';
-                            break;
-                    }
-                    break;
-                }
+            Console.WriteLine("\r\nInforme a Posição Inicial do Tupiniquim I, por exemplo 5 5 N");
+            Console.WriteLine("N = Norte, S = Sul, L = Leste, O = Oeste");
+            Console.Write("Posição Inicial: ");
+            str_posicao_inicial = Console.ReadLine();
+            string[] posicao_inicial = str_posicao_inicial.Split(' ');
+            posicao_x_robo = int.Parse(posicao_inicial[0]);
+            posicao_y_robo = int.Parse(posicao_inicial[1]);
+            bussola = Convert.ToChar(posicao_inicial[2]);
+            //processamento
 
-                while (ordens[i] == 'D')
-                {
-                    switch (bussola)
-                    {
-                        case 'N':
-                            bussola = 'L';
-                            break;
-                        case 'S':
-                            bussola = 'O';
-                            break;
-                        case 'L':
-                            bussola = 'S';
-                            break;
-                        case 'O':
-                            bussola = 'N';
-                            break;
-                    }
-                    break;
-                }
 
-                while (ordens[i] == 'M')
-                {
-                    if (bussola == 'N')
-                    {
-                        posicao_inicial_y++;
-                        break;
-                    }
-                    else
-                    {
-                        if (bussola == 'L')
-                        {
-                            posicao_inicial_x++;
-                            break;
-                        }
-                        else
-                        {
-                            if (bussola == 'S')
-                            {
-                                posicao_inicial_y--;
-                                break;
-                            }
-                            else
-                            {
-                                if (bussola == 'O')
-                                {
-                                    posicao_inicial_x--;
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            Console.WriteLine(posicao_inicial_x + " " + posicao_inicial_y + " " + bussola);
+
+            //saida
         }
     }
 }
