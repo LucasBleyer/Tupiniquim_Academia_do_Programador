@@ -6,12 +6,12 @@ namespace Tupiniquim.ConsoleApp
     {
         static void Main(string[] args)
         {
-//declarção de variáveis
+        //declaração de variáveis
             string str_quadrilatero, str_posicao_inicial, str_movimento;
             int minimo_x = 0, minimo_y = 0, maximo_x, maximo_y, posicao_x_robo, posicao_y_robo; ;
             char bussola;
             bool continuar;
-//entrada de dados
+        //entrada de dados
             do
             {
                 Console.WriteLine("Tupiniquim I");
@@ -35,7 +35,7 @@ namespace Tupiniquim.ConsoleApp
                 Console.Write("Movimentações: ");
                 str_movimento = Console.ReadLine();
                 char[] ordens = str_movimento.ToCharArray();
-//processamento
+            //processamento
                 for (int i = 0; i < ordens.Length; i++)
                 {
                     if (ordens[i] == 'E')//ir pra esquerda
@@ -94,7 +94,7 @@ namespace Tupiniquim.ConsoleApp
                         }
                     }
                 }
-//saida
+            //saida
                 Console.WriteLine(posicao_x_robo + " " + posicao_y_robo + " " + bussola);
 
                 Console.Write("\r\n[S] Adicionar mais um robô para o mapeamento [N] Sair: ");
