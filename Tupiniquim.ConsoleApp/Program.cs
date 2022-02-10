@@ -32,20 +32,24 @@ namespace Tupiniquim.ConsoleApp
             Console.WriteLine("Movimentações: ");
             str_movimento = Console.ReadLine();
             char[] ordens = str_movimento.ToCharArray();
-            //processamento
+        //processamento
             for (int i = 0; i < ordens.Length; i++)
             {
                 if (ordens[i] == 'E')
                 {
                     switch (bussola)
                     {
-                        case 'N': bussola = 'O';
+                        case 'N':
+                            bussola = 'O';
                             break;
-                        case 'S': bussola = 'L';
+                        case 'S':
+                            bussola = 'L';
                             break;
-                        case 'L': bussola = 'N';
+                        case 'L':
+                            bussola = 'N';
                             break;
-                        case 'O': bussola = 'S';
+                        case 'O':
+                            bussola = 'S';
                             break;
                     }
                 }
@@ -67,12 +71,28 @@ namespace Tupiniquim.ConsoleApp
                             break;
                     }
                 }
+                if (ordens[i] == 'M')
+                {
+                    if (bussola == 'N' && maior_y >= (posicao_y_robo + 1))
+                    {
+                        posicao_y_robo++;
+                    }
+                    else if (bussola == 'S' && menor_y <= (posicao_y_robo - 1))
+                    {
+                        posicao_y_robo--;
+                    }
+                    else if (bussola == 'L' && maior_x >= (posicao_x_robo + 1))
+                    {
+                        posicao_x_robo++;
+                    }
+                    else if (bussola == 'O' && menor_x <= (posicao_x_robo - 1))
+                    {
+                        posicao_x_robo--;
+                    }
+                }
             }
-
-
-
-
-            //saida
+        //saida
+            Console.WriteLine(posicao_x_robo + " " + posicao_y_robo + " " + bussola);
         }
     }
 }
