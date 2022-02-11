@@ -24,7 +24,7 @@ namespace Tupiniquim.ConsoleApp
                 Console.WriteLine("\r\nInforme a Posição Inicial do Tupiniquim I, por exemplo 1 2 N");
                 Console.WriteLine("[N] Norte, [S] Sul, [L] Leste, [O] Oeste");
                 Console.Write("Posição Inicial: ");
-                str_posicao_inicial = Console.ReadLine();
+                str_posicao_inicial = Console.ReadLine().ToUpper();
                 string[] posicao_inicial = str_posicao_inicial.Split(' ');
                 posicao_x_robo = int.Parse(posicao_inicial[0]);
                 posicao_y_robo = int.Parse(posicao_inicial[1]);
@@ -33,7 +33,7 @@ namespace Tupiniquim.ConsoleApp
                 Console.WriteLine("\r\nInforme os comandos a serem seguidos pelo Tupiniquim I, por exemplo EMEMEMEMM");
                 Console.WriteLine("[M] Mover, [E] Esquerda, [D] Direita");
                 Console.Write("Movimentações: ");
-                str_movimento = Console.ReadLine();
+                str_movimento = Console.ReadLine().ToUpper();
                 char[] ordens = str_movimento.ToCharArray();
             //processamento
                 for (int i = 0; i < ordens.Length; i++)
